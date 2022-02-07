@@ -1,0 +1,42 @@
+<nav class="navigation"> 
+    <div class="home">
+        <i class="fas fa-home"></i>
+    </div>
+    <input class="search" type="text" placeholder="Rechercher une station..."
+        ng-model="filter_name">
+</nav>
+
+
+<div class="page-home">
+
+    <!-- CARTE PAR STATION -->
+    <div class="station-card boxshad" ng-repeat="station in stations | toArray:false | filter : filter_name : station_name" 
+        ng-click="gotoStation(station.station_uid)">   
+        <div class="station-left">
+            <div class="station-name"
+                style="font-size: {{ transformNameInSize(station.station_name) }}%; ">
+                {{ station.station_name }}  
+            </div>
+            <div class="station-alt"> 
+                <div class="alt-min">{{ station.alt_min }}1000 m</div>
+                <div class="alt-max">{{ station.alt_max }}2000 m</div>
+            </div>
+        </div> 
+
+        <div class="station-right">
+            <div class="station-weather weather-icon"> 
+                <i class="fas fa-{{ station.weather }}" style="color: {{ color(station.weather) }}"></i>  
+            </div>
+            <div class="station-weather">
+                {{ station.temperature }}
+            </div>
+        </div>
+    </div> 
+
+
+
+</div>  
+
+
+
+

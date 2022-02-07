@@ -1,0 +1,54 @@
+<nav class="nav2"> 
+    <div class="station_title" 
+    ng-init="station_uid = main.$route.current.params.stationUid; "> 
+    {{ stations[station_uid].station_name }}  
+</div>
+</nav>
+
+
+<div class="station-sections" ng-init="station_uid = main.$route.current.params.stationUid; "> 
+    <div class="boxshad">
+        <p class="station-weather weather-icon"> 
+            <i class="fas fa-{{ stations[station_uid].weather }}" style="color: {{ color(stations[station_uid].weather) }}"></i>  
+        </p>
+        <p class="station-weather" id="page2">
+            {{ stations[station_uid].temperature }}
+        </p>
+    </div>
+
+    <div class="boxshad" id="quant">
+        <p class="p_pistes_ouvertes">165 / 176</p>
+        <p class="pistes_ouvertes">Pistes ouvertes</p>
+        <p class="p_remontees_ouvertes">{{ stations[station_uid].remontees_ouvertes }}</p>
+        <p class="remontees_ouvertes">Remontées mécaniques</p>
+    </div>
+
+    <div class="boxshad" id="prix">
+        <p class="text_journee">1 journée / 1 adulte</p>
+        <p class="prix">N/A</p>
+        <p class="boxshad" id="detail">Voir en détail</p>
+    </div>
+
+    <div class="boxshad" id="neige">
+        <p class="text_neige">Eneigement Altitude Min / Max</p>
+        <p class="alt">min M {{stations[station_uid].neige_bas_cm}}</p>
+        <p class="alt">max M {{stations[station_uid].neige_haut_cm}}</p>
+    </div>
+
+    <div class="boxshad" id="prix">  
+        <p class="fas fa-info inf" style="color: #d3d3d3c9"></p>
+        <!--<p>Plus d'infos</p>-->
+    </div>
+
+    <div class="boxshad" id="prix">  
+        <p class="text_journee">Le domaine skiable</p>
+        <p class="prix">{{stations[station_uid].km_ouverts}}</p>
+        <p class="boxshad" id="detail">Voir en détail</p>
+    </div>
+
+
+</div>
+
+<div class="boxshad" id="retour"  ng-click="goToAccueil()"> 
+    Revenir aux stations</div>
+
