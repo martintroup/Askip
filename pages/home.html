@@ -1,6 +1,6 @@
 <nav class="navigation"> 
     <div class="home">
-        <i class="fas fa-home"></i>
+        <input type="checkbox" class="ete_hiver">
     </div>
     <input class="search" type="text" placeholder="Rechercher une station..."
         ng-model="filter_name">
@@ -18,8 +18,18 @@
                 {{ station.station_name }}  
             </div>
             <div class="station-alt"> 
-                <div class="alt-min">{{ station.alt_min }}1000 m</div>
-                <div class="alt-max">{{ station.alt_max }}2000 m</div>
+                <div class="desc-acc" id="prix-acc">
+                    <i class="fas fa-euro-sign" style="color: rgb(52, 152, 219, 1)"></i>
+                    58
+                </div>
+                <div class="desc-acc" id="alt-min">
+                    <i class="fas fa-skiing" style="color: rgb(52, 152, 219, 1)"></i>
+                    {{ station.p_pistes_ouvertes }} 165/170
+                </div>
+                <div class="desc-acc" id="alt-max">
+                    <i class="fas fa-map-marked-alt" style="color: rgb(52, 152, 219, 1)"></i>
+                    Alpes Nord
+                </div>
             </div>
         </div> 
 
@@ -36,6 +46,7 @@
 
 
 </div>  
+
 
 
 
